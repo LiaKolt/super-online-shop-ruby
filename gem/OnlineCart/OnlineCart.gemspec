@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrey Eremin"]
   spec.email         = ["andrey.eremin@xing.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Библиотека для работы с корзиной для интернет-магазина OnlineShop}
+  spec.homepage      = "http://localhost"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -21,8 +20,7 @@ Gem::Specification.new do |spec|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  # TODO: !!!!!
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = Dir['LICENSE.md', 'README.md', 'lib/**/*']
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.12"
