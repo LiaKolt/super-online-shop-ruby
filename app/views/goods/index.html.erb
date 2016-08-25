@@ -1,10 +1,4 @@
-<h1> Онлайн магазин </h1>
-
-<div>
-  Добро пожаловать в наш интернет-магазин OnlineShop. Здесь вы найдете множество товаров для вас и ваших родных.
-</div>
-
-<%= link_to "Корзина ()", "TODO" %>
+<%= link_to "Ваша корзина (0 товаров)", cart_path %>
 
 <h3>Наши товары</h3>
 
@@ -13,8 +7,16 @@
     <th>Товар</th>
     <th>Цена</th>
     <th>В наличии?</th>
+    <th></th>
   </thead>
   <tbody>
-    <!-- goods TODO: -->
+    <% @goods.each do |good| %>
+      <tr>
+        <td><%= good.name %></td>
+        <td><%= good.price %></td>
+        <td><%= good.available? %></td>
+        <td><%= Cart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", "TODO") %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

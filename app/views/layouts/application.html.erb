@@ -8,14 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <h1> Онлайн магазин </h1>
+
+  <div class="slogan">
+    Добро пожаловать в наш интернет-магазин OnlineShop. Здесь вы найдете множество товаров для вас и ваших родных.
+  </div>
+
+  <%= yield %>
 
   <div class="footer">
     <div>
       © OnlineShop & <%= link_to "Андрей Ерёмин, #{Time.now.year}", "http://aeremin.ru" %>
     </div>
     <div>
-      <%= link_to "Панель администратора", admin_goods_path %>
+      <%= link_to "Панель администратора", admin_goods_path %> | <%= link_to "Главная страница", root_path %>
   </div>
 </body>
 </html>

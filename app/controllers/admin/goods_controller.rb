@@ -11,6 +11,7 @@ class Admin::GoodsController < ActionController::Base
   end
 
   def index
+    @goods = []
   end
 
   def update
