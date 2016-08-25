@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'OnlineCart/version'
+require 'online_cart/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "OnlineCart"
+  spec.name          = "online_cart"
   spec.version       = OnlineCart::VERSION
   spec.authors       = ["Andrey Eremin"]
   spec.email         = ["andrey.eremin@xing.com"]
 
-  spec.summary       = %q{Библиотека для работы с корзиной для интернет-магазина OnlineShop}
+  spec.summary       = %q{Библиотека для работы с корзиной и товарами для интернет-магазина OnlineShop}
   spec.homepage      = "http://localhost"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
