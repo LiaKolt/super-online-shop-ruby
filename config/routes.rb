@@ -10,7 +10,13 @@ Rails.application.routes.draw do
   delete "cart/all"       => "cart#destroy_all"
 
   namespace :admin do
-    resources :goods
+    resources :goods, except: [:show]
+    resources :user, only: [:index] do
+      member do
+        post   'make_admin'
+        delete 'make_user'
+      end
+    end
   end
 
   root 'goods#index'
