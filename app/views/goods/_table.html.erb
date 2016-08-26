@@ -1,0 +1,18 @@
+<table class="goods-table">
+  <thead>
+    <th>Товар</th>
+    <th>Цена</th>
+    <th>В наличии?</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @goods.each do |good| %>
+      <tr>
+        <td><%= good.name %></td>
+        <td><%= good.price %></td>
+        <td><%= good.available? %></td>
+        <td><%= Cart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", "TODO") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

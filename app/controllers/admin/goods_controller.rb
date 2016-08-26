@@ -1,6 +1,4 @@
-class Admin::GoodsController < ApplicationController
-  before_action :authenticate_user!
-
+class Admin::GoodsController < Admin::AdminController
   def create
   end
 

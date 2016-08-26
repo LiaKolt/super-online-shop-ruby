@@ -12,7 +12,7 @@ footer {
   padding-bottom: 10px;
 }
 
-footer a {
+footer a, footer a:visited {
   color: white;
 }
 

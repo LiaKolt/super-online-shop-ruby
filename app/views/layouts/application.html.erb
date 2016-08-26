@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OnlineShopRubyBook</title>
+  <title>OnlineShop - интернет-магазин на Ruby On Rails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -24,7 +24,10 @@
       © OnlineShop & <%= link_to "Андрей Ерёмин, #{Time.now.year}", "http://aeremin.ru" %>
     </div>
     <div>
-      <%= link_to "Панель администратора", admin_goods_path %> | <%= link_to "Главная страница", root_path %>
+      <% if current_user && current_user.is_admin %>
+        <%= link_to "Панель администратора", admin_goods_path %> |
+      <% end %>
+      <%= link_to "Главная страница", root_path %>
     </div>
   </footer>
 </body>
