@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem 'online_cart'
+gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
 #gem 'twitter-bootstrap-rails' # TODO to make it looks better
 
 

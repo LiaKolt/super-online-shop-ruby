@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/developer88/online_shop_cart_book.git
+  revision: 03adfc28ef2f008ada26880af570c5d371d8088e
+  specs:
+    online_cart (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -83,7 +89,6 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    online_cart (0.1.0)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
     rack (1.6.4)
@@ -164,7 +169,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  online_cart
+  online_cart!
   rails (= 4.2.7.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
