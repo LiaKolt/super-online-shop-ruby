@@ -10,6 +10,12 @@ class Admin::GoodsController < Admin::AdminController
   end
 
   def update
+    good = Good.new(params[:good])
+    if good.save
+
+    else
+
+    end
   end
 
   def destroy
