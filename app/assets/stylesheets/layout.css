@@ -31,3 +31,16 @@ header {
 .slogan {
   padding-bottom: 5px;
 }
+
+.languages-selector {
+  float: right;
+  width: 60px;
+}
+
+.languages-selector a:visited {
+  color: black;
+}
+
+.languages-selector .active {
+  color: blue !important;
+}

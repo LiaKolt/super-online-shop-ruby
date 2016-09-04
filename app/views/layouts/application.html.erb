@@ -8,6 +8,10 @@
 </head>
 <body>
   <header>
+    <div class="languages-selector">
+      <%= link_to("РУ", {locale: 'ru'}, {class: "#{I18n.locale == :ru ? 'active' : ''}"}) %> | <%= link_to("EN", {locale: 'en'}, {class: "#{I18n.locale == :en ? 'active' : ''}"}) %>
+    </div>
+
     <h1> Онлайн магазин </h1>
 
     <div class="slogan">
@@ -21,7 +25,7 @@
 
   <footer>
     <div>
-      © OnlineShop & <%= link_to "Андрей Ерёмин, #{Time.now.year}", "http://aeremin.ru" %>
+      © OnlineShop & <%= link_to "Андрей Ерёмин, #{Time.now.year}", "http://aeremin.ru", target: '_blank' %>
     </div>
     <div>
       <% if current_user && current_user.is_admin %>

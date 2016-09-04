@@ -2,7 +2,6 @@
   <thead>
     <th>Товар</th>
     <th>Цена</th>
-    <th>В наличии?</th>
     <th></th>
   </thead>
   <tbody>
@@ -10,8 +9,7 @@
       <tr>
         <td><%= good.name %></td>
         <td><%= good.price %></td>
-        <td><%= good.available? %></td>
-        <td><%= Cart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", cart_path(good.id), mathod: 'POST') %></td>
+        <td><%= link_to("Удалить", cart_path(good.id), method: "DELETE") %></td>
       </tr>
     <% end %>
   </tbody>
