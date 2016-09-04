@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
-  hello: "Hello world"
+  layout:
+    header:
+      title: Онлайн магазин
+      slogan: Добро пожаловать в наш интернет-магазин OnlineShop. Здесь вы найдете множество товаров для вас и ваших родных.
+    footer:
+      main_page: Главная страница
+      admin_page: Панель администратора
