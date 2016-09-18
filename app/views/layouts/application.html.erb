@@ -7,19 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
+  <div class="page-header">
     <div class="languages-selector">
-      <%= link_to("РУ", {locale: 'ru'}, {class: "#{I18n.locale == :ru ? 'active' : ''}"}) %> | <%= link_to("EN", {locale: 'en'}, {class: "#{I18n.locale == :en ? 'active' : ''}"}) %>
+
     </div>
 
-    <h1> <%= t('layout.header.title') %> </h1>
+    <h1>
+      <%= link_to(t('layout.header.title'), root_path) %>
+      <small><%= t('layout.header.slogan') %></small>
+    </h1>
+  </div>
 
-    <div class="slogan">
-      <%= t('layout.header.slogan') %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="...">
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to(t('layout.header.cart'), cart_path, class: "btn btn-default navbar-btn") %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to("РУ", {locale: 'ru'}, {class: "#{I18n.locale == :ru ? 'active' : ''} "}) %><%= link_to("EN", {locale: 'en'}, {class: "#{I18n.locale == :en ? 'active' : ''} navbar-right"}) %></li>
+        </ul>
+      </div>
+
     </div>
-  </header>
+  </nav>
 
   <div class='container'>
+    <ol class="breadcrumb">
+      <li><%= link_to(t('layout.header.home'), root_path) %></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+
     <%= yield %>
   </div>
 

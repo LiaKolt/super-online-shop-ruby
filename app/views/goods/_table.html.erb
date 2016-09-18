@@ -11,7 +11,7 @@
         <td><%= good.name %></td>
         <td><%= good.price %></td>
         <td><%= good.available? %></td>
-        <td><%= Cart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", cart_path(good.id), mathod: 'POST') %></td>
+        <td><%= OnlineCart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", cart_path(good.id), mathod: 'POST') %></td>
       </tr>
     <% end %>
   </tbody>

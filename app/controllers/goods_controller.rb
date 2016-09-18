@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
   def index
-    @goods = []
+    @goods = Good.all
   end
 end

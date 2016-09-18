@@ -3,35 +3,6 @@ body {
   margin: 0;
 }
 
-footer {
-  background-color: gray;
-  color: white;
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-}
-
-footer a, footer a:visited {
-  color: white;
-}
-
-header {
-  background-color: gray;
-  color: white;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  padding-left: 10px;
-}
-
-.container {
-  padding-left: 10px;
-}
-
-.slogan {
-  padding-bottom: 5px;
-}
-
 .languages-selector {
   float: right;
   width: 60px;

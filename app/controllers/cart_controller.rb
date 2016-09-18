@@ -6,7 +6,7 @@ class CartController < ApplicationController
   end
 
   def show
-
+    @goods = OnlineCart.load(object_class: Good, session_object: session)
   end
 
   def destroy
