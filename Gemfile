@@ -17,7 +17,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 # Модуль корзины
-gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
+#gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
 
 group :development do
   gem 'web-console', '~> 2.0'

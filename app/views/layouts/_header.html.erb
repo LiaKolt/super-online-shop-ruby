@@ -15,10 +15,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to t('layout.footer.main_page'), root_path %></li>
-        <li><%= link_to(t('layout.header.cart'), cart_path) %></li>
-        <% if current_user && current_user.is_admin %>
-          <li><%= link_to t('layout.footer.admin_page'), admin_goods_path %></li>
+        <% if controller.class.parent == 'Admin' %>
+          <%= render "layouts/admin_navigation" %>
+        <% else %>
+          <%= render "layouts/user_navigation" %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

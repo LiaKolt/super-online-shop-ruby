@@ -6,7 +6,7 @@ class Admin::GoodsController < Admin::AdminController
   end
 
   def index
-    @goods = Good.all
+   # @goods = Good.all
   end
 
   def update

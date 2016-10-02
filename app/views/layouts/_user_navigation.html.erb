@@ -1,0 +1,5 @@
+<li><%= link_to t('layout.footer.main_page'), root_path %></li>
+<li><%= link_to(t('layout.header.cart'), cart_path) %></li>
+<% if current_user && current_user.is_admin %>
+  <li><%= link_to t('layout.footer.admin_page'), admin_goods_path %></li>
+<% end %>

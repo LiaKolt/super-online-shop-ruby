@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/developer88/online_shop_cart_book.git
-  revision: 03adfc28ef2f008ada26880af570c5d371d8088e
-  specs:
-    online_cart (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -173,7 +167,6 @@ DEPENDENCIES
   devise-i18n
   jbuilder (~> 2.0)
   jquery-rails
-  online_cart!
   rails (= 4.2.7.1)
   sass-rails (~> 5.0)
   sqlite3
