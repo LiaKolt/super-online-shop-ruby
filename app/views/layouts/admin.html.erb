@@ -7,23 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1> Онлайн магазин </h1>
+  <div class="container">
+    <%= render "layouts/header" %>
 
-    <%= link_to "Пользователи", admin_user_index_path %> | <%= link_to "Товары", admin_goods_path %> | <%= link_to "Выход", destroy_user_session_path %>
-  </header>
-
-  <div class='container'>
     <%= yield %>
+
+    <%= render "layouts/footer" %>
   </div>
 
-  <footer>
-    <div>
-      © OnlineShop & <%= link_to "Андрей Ерёмин, #{Time.now.year}", "http://aeremin.ru", target: '_blank' %>
-    </div>
-    <div>
-      <%= link_to "Главная страница магазина", root_path %>
-    </div>
-  </footer>
+    <!--<%= link_to "Пользователи", admin_user_index_path %> | <%= link_to "Товары", admin_goods_path %> | <%= link_to "Выход", destroy_user_session_path %>-->
+
 </body>
 </html>

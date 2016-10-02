@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>
+    <%= link_to(t('layout.header.title'), root_path) %>
+    <br/><small><%= t('layout.header.slogan') %></small>
+  </h1>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="OnlineShop" src="<%= asset_path 'favicon24.png' %>" width="20">
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to t('layout.footer.main_page'), root_path %></li>
+        <li><%= link_to(t('layout.header.cart'), cart_path) %></li>
+        <% if current_user && current_user.is_admin %>
+          <li><%= link_to t('layout.footer.admin_page'), admin_goods_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="<%= I18n.locale == :ru ? 'active' : '' %>"><%= link_to("РУ", {locale: 'ru'}) %></li>
+        <li class="<%= I18n.locale == :en ? 'active' : '' %>"><%= link_to("EN", {locale: 'en'}) %></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<ol class="breadcrumb">
+  <li><%= link_to(t('layout.header.home'), root_path) %></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
