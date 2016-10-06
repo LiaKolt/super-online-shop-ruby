@@ -31,4 +31,4 @@ rails s
 
 ## The MIT License (MIT)
 
-Детали смотрите [тут](LICENSE.md)
+Детали [тут](LICENSE.md)
