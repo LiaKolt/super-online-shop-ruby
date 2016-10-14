@@ -20,6 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  cart:
+    user:
+      phone: Телефон
+    title: Корзина
+    send_order: Отправить заказ
+    order_sent: Спасибо за Ваш заказ! В ближайшее время оператор свяжется с вами для уточнения заказа.
+  goods:
+    table:
+      available: В наличии
+      not_available: Нет на складе
+      good_name: Товар
+      is_available: В наличии?
+      price: Цена
+      in_cart: В корзине
+      add_to_cart: Добавить в корзину
+      remove: Удалить из корзины
   layout:
     header:
       title: Онлайн магазин

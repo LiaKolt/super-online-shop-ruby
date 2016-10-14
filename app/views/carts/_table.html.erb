@@ -1,0 +1,28 @@
+<table class="table table-condensed">
+  <thead>
+    <th><%= I18n.t("goods.table.good_name") %></th>
+    <th><%= I18n.t("goods.table.price") %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @goods.each do |good| %>
+      <tr>
+        <td><%= good.name %></td>
+        <td><%= good.price %></td>
+        <td><%= link_to(I18n.t("goods.table.remove"), cart_path(good_id: good.id), method: "DELETE") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<form class="well">
+  <div class="form-group">
+    <label for="user_email">Email</label>
+    <input type="email" class="form-control" id="user_email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="user_phone"><%= I18n.t('cart.user.phone') %></label>
+    <input type="email" class="form-control" id="user_phone" placeholder="<%= I18n.t('cart.user.phone') %>">
+  </div>
+  <button type="submit" class="btn btn-default"><%= I18n.t("cart.send_order") %></button>
+</form>

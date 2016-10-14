@@ -1,8 +1,8 @@
-<table class="goods-table">
+<table class="table table-condensed">
   <thead>
-    <th>Товар</th>
-    <th>Цена</th>
-    <th>В наличии?</th>
+    <th><%= I18n.t("goods.table.good_name") %></th>
+    <th><%= I18n.t("goods.table.price") %></th>
+    <th><%= I18n.t("goods.table.is_available") %></th>
     <th></th>
   </thead>
   <tbody>
@@ -10,8 +10,9 @@
       <tr>
         <td><%= good.name %></td>
         <td><%= good.price %></td>
-        <td><%= good.available? %></td>
-        <td><%= OnlineCart.has_good?(good) ? link_to("В корзине", cart_path) : link_to("Добавить в корзину", cart_path(good.id), mathod: 'POST') %></td>
+        <td><%= I18n.t("goods.table.#{good.available? ? 'available' : 'not_available'}") %></td>
+        <% "TODO: Строчка 15 слишком сложная. Имеет смысл вынести данный код в helper-метод и поместить его, например в app/helpers/goods_helper.rb Это избавит данный view от лишней логики и разделит работу backend и frontend разработчиков" %>
+        <td><%= OnlineCart.has_good?(good_id: good.id, session: session) ? link_to(I18n.t("goods.table.in_cart"), cart_path) : link_to(I18n.t("goods.table.add_to_cart"), cart_path(good_id: good.id), method: 'POST') %></td>
       </tr>
     <% end %>
   </tbody>
