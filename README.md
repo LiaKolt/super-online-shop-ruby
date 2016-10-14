@@ -37,7 +37,7 @@ rails s
 rake notes
 ```
 
-Однако, данная команда отобразит `TODO` только в `*.rb` файлах. Воспользуйтесь [поиском](https://github.com/developer88/online_shop_ruby_book/search?utf8=%E2%9C%93&q=TODO&type=Code) для отображения всех `TODO` меток в проекте.
+Однако, данная команда отобразит `TODO` только в `*.rb` файлах. Воспользуйтесь поиском в вашей IDE для отображения всех `TODO` меток в проекте.
 
 ## The MIT License (MIT)
 
