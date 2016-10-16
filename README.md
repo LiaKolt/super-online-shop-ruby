@@ -1,6 +1,12 @@
-# Интернет-магазин OnlineShop
+# Интернет-магазин SuperOnlineShop
 
-Ruby on Rails приложение интернет-магазина OnlineShop.
+Ruby on Rails приложение интернет-магазина SuperOnlineShop. Данная версия интернет магазина доступна [онлайн](https://super-online-shop.herokuapp.com/). Доступ к административной панели:
+
+```
+url: https://super-online-shop.herokuapp.com/admin/goods
+логин: admin@admin.com
+пароль: .test.
+```
 
 ## История версий
 
