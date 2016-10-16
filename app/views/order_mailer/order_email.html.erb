@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= I18n.t('mailer.order.new') %></h1>
+    <p>
+      <%= I18n.t('mailer.order.thank_you') %>:
+    </p>
+    <p>
+      <div><%= I18n.t('mailer.order.email') %>: <%= @user[:user_email] %></div>
+      <div><%= I18n.t('mailer.order.phone') %>: <%= @user[:user_phone] %></div>
+      <div><%= I18n.t('mailer.order.address') %>: <%= @user[:user_address] %></div>
+    </p>
+    <p>
+      <div><%= I18n.t('mailer.order.goods_ordered') %>:</div>
+      <ul>
+        <% @order.each do |good| %>
+          <li><%= good[:item].name %>, <%= good[:count] %> шт., <%= good[:item].price * good[:count] %> руб.</li>
+        <% end %>
+      </ul>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<%= I18n.t('mailer.order.new') %>
+===============================================
+
+<%= I18n.t('mailer.order.thank_you') %>:
+
+<%= I18n.t('mailer.order.email') %>: <%= @user[:user_email] %>
+<%= I18n.t('mailer.order.phone') %>: <%= @user[:user_phone] %>
+<%= I18n.t('mailer.order.address') %>: <%= @user[:user_address] %>
+
+<%= I18n.t('mailer.order.goods_ordered') %>:
+
+<% @order.each do |good| %>
+    <%= good[:item].name %>, <%= good[:count] %> шт., <%= good[:item].price * good[:count] %> руб.
+<% end %>

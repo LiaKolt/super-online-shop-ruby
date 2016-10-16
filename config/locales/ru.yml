@@ -20,9 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  mailer:
+    order:
+      new: "Заказ с сайта superonlineshop.ru"
+      thank_you: "Спасибо вам, за заказ! В ближайшее время наш оператор свяжется с вами для уточнения параметров заказа. Указанные, вами данные"
+      email: E-mail
+      phone: Телефон
+      address: Адрес
+      goods_ordered: Заказанные товары
   cart:
     user:
       phone: Телефон
+      address: Адрес
     title: Корзина
     send_order: Отправить заказ
     order_sent: Спасибо за Ваш заказ! В ближайшее время оператор свяжется с вами для уточнения заказа.

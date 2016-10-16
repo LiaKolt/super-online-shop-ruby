@@ -5,6 +5,11 @@ class CartsController < ApplicationController
   #         пользователь покинет сайт или зайдет на него с другого устройства или браузера,
   #         то хранение корзины в анонимной сессии является простым и эффективным способом.
 
+  # TODO: В данной версии этого приложения мы не реагируем на ошибки, которые могут возникнуть в
+  #         процессе работы нашего приложения. Это плохо, так как пользователь не сможет понять
+  #         что пошло не так и что ему делать дальше.
+
+  before_action :empty_flash, except: [:proceed]
 
   # TODO: На многих интернет магазинах принято спрашивать у пользователя о его дальнейших действиях.
   #       Возможно пользователь, после добавления товара в корзину желает продолжить ознакомление со
@@ -34,13 +39,20 @@ class CartsController < ApplicationController
   end
 
   def proceed
+    # TODO: Данный метод можно (и нужно!) значительно улучшить. Например, разбить его на функции,
+    #         например, одна будет подготавливать заказ пользователя, другая отправлять данные,
+    #         третья, очищать коризну. Можно пойти еще дальше. Функцию очистки корзины перенести в
+    #         класс OnlineCart. Другие функции вынести в concern Cart.
+
     load_cart
-    # TODO!!! sendmail here please
+    goods = OnlineCart.new(session: session).goods
+    order = Good.where(id: OnlineCart.ids(session: session)).map{|g| {item: g, count: goods[g.id.to_s]}}
+    OrderMailer.order_email(user: order_params, order: order).deliver_now
     @goods.each do |good|
       OnlineCart.remove(good_id: good.id, session: session)
     end
 
-    flash[:notice] = i18n.t('cart.order_sent')
+    flash[:notice] = I18n.t('cart.order_sent')
     render :show
   end
 
@@ -54,5 +66,13 @@ class CartsController < ApplicationController
 
   def load_cart
     @goods = Good.where(id: OnlineCart.ids(session: session))
+  end
+
+  def order_params
+    params.permit(:user_email, :user_phone, :user_address)
+  end
+
+  def empty_flash
+    flash[:notice] = nil
   end
 end
