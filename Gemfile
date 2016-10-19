@@ -40,6 +40,10 @@ gem 'pg', group: :production
 # Для полноценной работы требуется использовать данный gem
 gem 'rails_12factor', group: :production
 
+# Для отправки писем в production среде (Heroku) мы используем сервис
+# TODO: !!!!! fix this
+gem 'sendgrid-ruby', group: :production
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'letter_opener'
