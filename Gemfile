@@ -49,3 +49,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'letter_opener'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
