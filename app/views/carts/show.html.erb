@@ -6,7 +6,9 @@
     </div>
 <% end %>
 
-В вашей корзине <%= OnlineCart.ids(session: session).count %>  <%= localize_goods(OnlineCart.ids(session: session).count) %>.
+<p>
+    <%= I18n.t('cart.in_cart', goods_count: "#{OnlineCart.ids(session: session).count} #{localize_goods(OnlineCart.ids(session: session).count)}") %>.
+</p>
 
 <% if OnlineCart.ids(session: session).count > 0 %>
   <% "TODO: Здесь мы используем отдельную копию partial-view для отображения таблицы с товарами. На данный момент единственная разница между partial-view из папки goods и папки carts в столбце со ссылками (добавить в корзину / удалить из корзины). Пока отличия небольшие, для упрощения нашего проекта лучше объеденить эти два partial-view в один." %>

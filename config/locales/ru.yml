@@ -29,6 +29,7 @@ ru:
       address: Адрес
       goods_ordered: Заказанные товары
   cart:
+    in_cart: В вашей корзине %{goods_count}
     user:
       phone: Телефон
       address: Адрес
@@ -36,6 +37,9 @@ ru:
     send_order: Отправить заказ
     order_sent: Спасибо за Ваш заказ! В ближайшее время оператор свяжется с вами для уточнения заказа.
   goods:
+    your_cart: Ваша корзина (%{goods_count})
+    empty: Извините, но в данный момент товары на складе отсутствуют!
+    title: Наши товары
     table:
       available: В наличии
       not_available: Нет на складе
@@ -46,6 +50,8 @@ ru:
       add_to_cart: Добавить в корзину
       remove: Удалить из корзины
   layout:
+    global:
+      title: SuperOnlineShop - интернет-магазин на Ruby On Rails
     header:
       title: Онлайн магазин
       slogan: Добро пожаловать в наш интернет-магазин SuperOnlineShop. Здесь вы найдете множество товаров для вас и ваших родных.

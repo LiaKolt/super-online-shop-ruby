@@ -1,6 +1,6 @@
 <li class="<%= (current_page?(root_path) || current_page?(goods_path)) ? 'active' : '' %>"><%= link_to t('layout.footer.main_page'), goods_path %></li>
 
-<% "TODO: Нет смысла показывать ссылку на карзину, если в ней нет ни одного товара" %>
+<% "TODO: Нет смысла показывать ссылку на корзину, если в ней нет ни одного товара" %>
 <li class="<%= current_page?(cart_path) ? 'active' : '' %>"><%= link_to(t('layout.header.cart'), cart_path) %></li>
 <% if current_user && current_user.is_admin %>
   <li class="<%= current_page?(admin_goods_path) ? 'active' : '' %>"><%= link_to t('layout.footer.admin_page'), admin_goods_path %></li>

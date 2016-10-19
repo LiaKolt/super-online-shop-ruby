@@ -1,9 +1,9 @@
-<h2>Наши товары</h2>
+<h2><%= I18n.t('goods.title') %></h2>
 
-<p><%= link_to "Ваша корзина (0 товаров)", cart_path %></p>
+<p><%= link_to I18n.t('goods.your_cart', goods_count: "#{OnlineCart.ids(session: session).count} #{localize_goods(OnlineCart.ids(session: session).count)}"), cart_path %>
 
 <% if @goods.size > 0 %>
   <%= render 'table' %>
 <% else %>
-  Извините, но в данный момент товары на складе отсутствуют!
+  <%= I18n.t('goods.empty') %>
 <% end %>
