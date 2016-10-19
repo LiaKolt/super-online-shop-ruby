@@ -28,9 +28,10 @@ gem 'devise'
 gem 'devise-i18n'
 
 # Модуль базы данных
-gem 'sqlite3'
+gem 'sqlite3', group: [:development, :test]
 # SQLite является примитивной СУБД, однако идеально подходит для маленький, нетребовательных проектов или
 #   во время разработки
+gem 'pg', group: :production
 
 # Модуль корзины
 #gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
