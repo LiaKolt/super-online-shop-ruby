@@ -1,3 +1,8 @@
+# Указывать версию Ruby в Gemfile является плохой практикой, так как вы не можете
+#   указать различные версии на вермя тестирования и разработки. Однако, когда речь идет о
+#   простейшем приложении этот способ является самым простым.
+ruby "2.3.1"
+
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.7.1'
@@ -29,6 +34,10 @@ gem 'sqlite3'
 
 # Модуль корзины
 #gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
+
+# Production версия нашего магазина распологается на хостинге Heroku
+# Для полноценной работы требуется использовать данный gem
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'web-console', '~> 2.0'
