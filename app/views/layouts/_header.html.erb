@@ -1,8 +1,6 @@
 <div class="page-header">
-  <h1>
-    <%= link_to(t('layout.header.title'), root_path) %>
-    <br/><small><%= t('layout.header.slogan') %></small>
-  </h1>
+  <h1><%= link_to(t('layout.header.title'), root_path) %></h1>
+  <h5><%= t('layout.header.slogan') %></h5>
 </div>
 
 <nav class="navbar navbar-default">
@@ -15,10 +13,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% if controller.class.parent == 'Admin' %>
-          <%= render "layouts/admin_navigation" %>
-        <% else %>
-          <%= render "layouts/user_navigation" %>
+        <li class="<%= (current_page?(root_path) || current_page?(goods_path)) ? 'active' : '' %>"><%= link_to t('layout.footer.main_page'), goods_path %></li>
+
+        <% "TODO: Нет смысла показывать ссылку на корзину, если в ней нет ни одного товара" %>
+        <li class="<%= current_page?(cart_path) ? 'active' : '' %>"><%= link_to(t('layout.header.cart'), cart_path) %></li>
+
+        <% if current_user && current_user.is_admin %>
+          <li class="<%= current_page?(admin_goods_path) ? 'active' : '' %>"><%= link_to t('layout.footer.admin_page'), admin_goods_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -26,12 +27,5 @@
         <li class="<%= I18n.locale == :en ? 'active' : '' %>"><%= link_to("EN", {locale: 'en'}) %></li>
       </ul>
     </div>
-
   </div>
 </nav>
-
-<ol class="breadcrumb">
-  <li><%= link_to(t('layout.header.home'), root_path) %></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
-</ol>

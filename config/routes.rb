@@ -12,13 +12,9 @@ Rails.application.routes.draw do
   get "admin",  to: redirect('/admin/goods')
 
   namespace :admin do
-    resources :goods, except: [:show]
-    resources :user, only: [:index] do
-      member do
-        post   'make_admin'
-        delete 'make_user'
-      end
-    end
+    resources :goods, only: [:index, :update, :destroy, :create]
+    # TODO: В данной версии у нас нет возможности создать и удалить администратора.
+    #       Сделать это можно только через Базу Данных.
   end
 
   root 'goods#index'

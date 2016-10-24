@@ -1,11 +1,53 @@
-<div>
-  <% render 'add_link' %>
-</div>
-
-<h3>Доступные товары</h3>
+<h2>Доступные товары</h2>
 
 <% if @goods.size > 0 %>
-  <%= render 'table' %>
+  <table class="table table-condensed">
+    <thead>
+      <th>Название</th>
+      <th>Цена</th>
+      <th>Количество на складе</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @goods.each do |good| %>
+        <tr>
+          <td><%= good.name %></td>
+          <td><%= good.price %></td>
+          <td>
+            <%= form_tag admin_good_path(id: good.id), class: "well well-sm form-inline", method: "PUT" do %>
+              <%= text_field_tag 'amount', good.amount, class: 'form-control', placeholder: 'Количество на складе' %>
+              <%= button_tag(type: 'submit', class: 'btn btn-default') do
+                 content_tag(:span, "Сохранить")
+              end %>
+              <%= link_to("Удалить", admin_good_path(id: good.id), method: "DELETE", class: "btn btn-danger") %>
+            <% end %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
-  В данный момент товары на складе отсутствуют! <% render 'add_link' %>
+  В данный момент товары на складе отсутствуют!
+<% end %>
+
+<h3>Добавить товар</h3>
+
+<%= form_tag admin_goods_path, class: "well", method: "POST" do %>
+  <div class="form-group">
+    <label for="name">Название</label>
+    <%= text_field_tag('name', nil, class: 'form-control', placeholder: 'Название') %>
+  </div>
+  <div class="form-group">
+    <label for="price">Цена</label>
+    <%= text_field_tag 'price', '', class: 'form-control', placeholder: 'Цена' %>
+  </div>
+  <div class="form-group">
+    <label for="amount">Количество на складе</label>
+    <%= text_field_tag 'amount', '', class: 'form-control', placeholder: 'Количество на складе' %>
+  </div>
+
+  <%= button_tag(type: 'submit', class: 'btn btn-default') do
+     content_tag(:span, "Сохранить")
+  end %>
 <% end %>

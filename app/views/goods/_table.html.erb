@@ -14,7 +14,11 @@
         <td><%= good.price %></td>
         <td><%= I18n.t("goods.table.#{good.available? ? 'available' : 'not_available'}") %></td>
         <% "TODO: Строчка 15 слишком сложная. Имеет смысл вынести данный код в helper-метод и поместить его, например в app/helpers/goods_helper.rb Это избавит данный view от лишней логики и разделит работу backend и frontend разработчиков" %>
-        <td><%= OnlineCart.has_good?(good_id: good.id, session: session) ? link_to(I18n.t("goods.table.in_cart"), cart_path) : link_to(I18n.t("goods.table.add_to_cart"), cart_path(good_id: good.id), method: 'POST') %></td>
+        <td>
+          <% if good.amount.positive? %>
+            <%= OnlineCart.has_good?(good_id: good.id, session: session) ? link_to(I18n.t("goods.table.in_cart"), cart_path) : link_to(I18n.t("goods.table.add_to_cart"), cart_path(good_id: good.id), method: 'POST') %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
