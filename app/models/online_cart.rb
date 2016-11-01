@@ -14,6 +14,10 @@ class OnlineCart
         @session[:goods] ||= {}
     end
 
+    def self.goods(session:)
+        new(session: session).goods
+    end
+
     def self.get(good_id:, session:)
         new(session: session).goods[good_id.to_s].to_i
     end

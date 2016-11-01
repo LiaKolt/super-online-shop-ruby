@@ -45,8 +45,7 @@ class CartsController < ApplicationController
     #         класс OnlineCart. Другие функции вынести в concern Cart.
 
     load_cart
-    goods = OnlineCart.new(session: session).goods
-    order = Good.where(id: OnlineCart.ids(session: session)).map{|g| {item: g, count: goods[g.id.to_s]}}
+    order = Good.where(id: OnlineCart.ids(session: session)).map{|g| {item: g, count: OnlineCart.goods(session: session)[g.id.to_s]}}
     OrderMailer.order_email(user: order_params, order: order).deliver_now
     @goods.each do |good|
       OnlineCart.remove(good_id: good.id, session: session)
