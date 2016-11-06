@@ -29,7 +29,7 @@ eq:
       address: Address
       goods_ordered: Ordered goods
   cart:
-    in_cart: %{goods_count} good(s) in your cart
+    in_cart: '%{goods_count} good(s) in your cart'
     user:
       phone: Phone
       address: Address
@@ -37,8 +37,8 @@ eq:
     send_order: Submit order
     order_sent: Thank you for the order. You will be called soon to check order details.
   goods:
-    your_cart: Your cart (%{goods_count})
-    empty: Sorry, but there are no goods available at the moment!
+    your_cart: 'Your cart (%{goods_count})'
+    empty: 'Sorry, but there are no goods available at the moment!'
     title: Our goods
     table:
       available: In stock
