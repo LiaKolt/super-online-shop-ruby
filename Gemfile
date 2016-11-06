@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem "therubyracer"
+gem 'therubyracer'
 
 # Для придания нашему проекту современного облика мы используем Frontend Framework
 #   Bootstrap 3 (http://getbootstrap.com/)
@@ -32,18 +32,14 @@ gem 'devise-i18n'
 gem 'sqlite3', group: [:development, :test]
 # SQLite является примитивной СУБД, однако идеально подходит для маленький, нетребовательных проектов или
 #   во время разработки
-gem 'pg', group: :production
+gem 'pg', group: [:production, :heroku]
 
 # Модуль корзины
 #gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
 
 # Production версия нашего магазина распологается на хостинге Heroku
 # Для полноценной работы требуется использовать данный gem
-gem 'rails_12factor', group: :production
-
-# Для отправки писем в production среде (Heroku) мы используем сервис
-# TODO: !!!!! fix this
-gem 'sendgrid-ruby', group: :production
+gem 'rails_12factor', group: [:production, :heroku]
 
 group :development do
   gem 'web-console', '~> 2.0'
