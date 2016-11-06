@@ -49,6 +49,10 @@ ru:
       in_cart: В корзине
       add_to_cart: Добавить в корзину
       remove: Удалить из корзины
+    plural:
+      one: товар
+      many: товаров
+      other: товара
   layout:
     global:
       title: SuperOnlineShop - интернет-магазин на Ruby On Rails

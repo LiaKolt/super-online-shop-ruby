@@ -24,7 +24,6 @@ class Admin::GoodsController < Admin::AdminController
     redirect_to admin_goods_path
   end
 
-
   private
 
   def good_params

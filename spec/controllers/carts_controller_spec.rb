@@ -19,9 +19,15 @@ describe CartsController, type: :controller do
   end
 
   describe '#create' do
+    it do
+      raise 'FIX me'
+    end
   end
 
   describe '#destroy' do
+    it do
+      raise 'FIX me'
+    end
   end
 
   describe '#proceed' do
