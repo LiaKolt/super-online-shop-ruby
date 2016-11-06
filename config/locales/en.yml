@@ -19,5 +19,48 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+eq:
+  mailer:
+    order:
+      new: "Order from superonlineshop.ru"
+      thank_you: "Thank you for the order. You will be called soon to check order details."
+      email: E-mail
+      phone: Phone
+      address: Address
+      goods_ordered: Ordered goods
+  cart:
+    in_cart: %{goods_count} good(s) in your cart
+    user:
+      phone: Phone
+      address: Address
+    title: Cart
+    send_order: Submit order
+    order_sent: Thank you for the order. You will be called soon to check order details.
+  goods:
+    your_cart: Your cart (%{goods_count})
+    empty: Sorry, but there are no goods available at the moment!
+    title: Our goods
+    table:
+      available: In stock
+      not_available: Not in of stock
+      good_name: Good
+      is_available: available?
+      price: Price
+      in_cart: in cart
+      add_to_cart: add to cart
+      remove: remove from cart
+    plural:
+      one: good
+      many: goods
+      other: goods
+  layout:
+    global:
+      title: SuperOnlineShop - online shop powered by Ruby On Rails
+    header:
+      title: Online shop
+      slogan: Welcome! Here you can find lots of goods for you and your friends.
+      cart: Cart
+      home: Home
+    footer:
+      main_page: Home
+      admin_page: Admin page
