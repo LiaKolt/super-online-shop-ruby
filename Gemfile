@@ -35,7 +35,7 @@ gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: [:production, :heroku]
 
 # Модуль корзины
-#gem 'online_cart', git: 'https://github.com/developer88/online_shop_cart_book.git'
+gem 'super_online_cart', git: 'https://github.com/developer88/super-online-shop-cart-ruby.git'
 
 # Production версия нашего магазина распологается на хостинге Heroku
 # Для полноценной работы требуется использовать данный gem

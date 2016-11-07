@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/developer88/super-online-shop-cart-ruby.git
+  revision: 6851d65c622c549e196c70f5c656180b1db8e6f2
+  specs:
+    super_online_cart (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -205,6 +211,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   sqlite3
+  super_online_cart!
   therubyracer
   turbolinks
   twitter-bootstrap-rails
@@ -215,4 +222,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
