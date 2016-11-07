@@ -19,14 +19,24 @@ describe CartsController, type: :controller do
   end
 
   describe '#create' do
-    it do
-      raise 'FIX me'
+    before do
+      allow(OnlineCart).to receive(:ids).and_return([Good.first.id])
+    end
+
+    it 'adds good to Session-based cart' do
+      expect(OnlineCart).to receive(:set)
+      post :create, good_id: Good.first.id
     end
   end
 
   describe '#destroy' do
-    it do
-      raise 'FIX me'
+    before do
+      allow(OnlineCart).to receive(:ids).and_return([Good.first.id])
+    end
+
+    it 'removes good from Session-based cart' do
+      expect(OnlineCart).to receive(:remove)
+      delete :destroy, good_id: Good.first.id
     end
   end
 
