@@ -10,7 +10,6 @@ class OnlineCart
     end
 
     def goods
-        @session[:cart]  ||= {}
         @session[:goods] ||= {}
     end
 
