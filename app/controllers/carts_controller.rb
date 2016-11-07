@@ -22,20 +22,18 @@ class CartsController < ApplicationController
     )
     load_cart
 
-    render :show
+    redirect_to cart_path
   end
 
   def show
     load_cart
-
-    render :show
   end
 
   def destroy
     OnlineCart.remove(good_id: params[:good_id], session: session)
     load_cart
 
-    render :show
+    redirect_to cart_path
   end
 
   def proceed
@@ -52,7 +50,7 @@ class CartsController < ApplicationController
     end
 
     flash[:notice] = I18n.t('cart.order_sent')
-    render :show
+    redirect_to cart_path
   end
 
   # TODO: В интернет магазинах также есть возможность изменить количество заказываемого товара.

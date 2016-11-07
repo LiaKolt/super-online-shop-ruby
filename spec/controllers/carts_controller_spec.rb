@@ -15,6 +15,7 @@ describe CartsController, type: :controller do
     it 'assigns @goods with goods' do
       get :show
       expect(assigns(:goods)).to eq([Good.all.first])
+      expect(response).to render_template(:show)
     end
   end
 
@@ -26,6 +27,7 @@ describe CartsController, type: :controller do
     it 'adds good to Session-based cart' do
       expect(OnlineCart).to receive(:set)
       post :create, good_id: Good.first.id
+      expect(response).to redirect_to(cart_path)
     end
   end
 
@@ -37,6 +39,7 @@ describe CartsController, type: :controller do
     it 'removes good from Session-based cart' do
       expect(OnlineCart).to receive(:remove)
       delete :destroy, good_id: Good.first.id
+      expect(response).to redirect_to(cart_path)
     end
   end
 
@@ -50,7 +53,7 @@ describe CartsController, type: :controller do
     it 'assigns @goods with goods' do
       post :proceed, user_email: 'test@test.com', user_phone: '+79997776611', user_address: 'Москва, Большая улица, 1'
       expect(assigns(:goods)).to eq(Good.where(id: Good.first.id))
-      expect(response).to render_template(:show)
+      expect(response).to redirect_to(cart_path)
     end
   end
 end
